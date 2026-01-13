@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berlima Ceria | Creative Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0a0a0a;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Background Animated Gradients */
+        .blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(180deg, rgba(59, 130, 246, 0.2) 0%, rgba(147, 51, 234, 0.2) 100%);
+            filter: blur(80px);
+            border-radius: 50%;
+            z-index: -1;
+            animation: move 20s infinite alternate;
+        }
+
+        @keyframes move {
+            from { transform: translate(-10%, -10%); }
+            to { transform: translate(20%, 20%); }
+        }
+
+        /* Glassmorphism Class */
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-hover:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #c084fc, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Profile Image Styling */
+        .member-card img {
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .member-card:hover img {
+            transform: scale(1.1) rotate(3deg);
+        scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="blob top-0 left-0"></div>
+    <div class="blob bottom-0 right-0" style="background: linear-gradient(180deg, rgba(236, 72, 153, 0.15) 0%, rgba(245, 158, 11, 0.15) 100%); animation-delay: -5s;"></div>
+
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-4xl">
+        <div class="glass rounded-full px-8 py-4 flex justify-between items-center">
+            <div class="text-xl font-extrabold tracking-tighter">
+                BERLIMA<span class="text-blue-500">CERIA.</span>
+            </div>
+            <div class="hidden md:flex gap-8 text-sm font-medium opacity-80">
+                <a href="#about" class="hover:text-blue-400 transition">About</a>
+                <a href="#services" class="hover:text-blue-400 transition">Services</a>
+                <a href="#team" class="hover:text-blue-400 transition">Our Squad</a>
+            </div>
+            <button class="bg-white text-black px-5 py-2 rounded-full text-sm font-bold hover:bg-blue-400 hover:text-white transition shadow-lg">
+                Let's Talk
+            </button>
+        </div>
+    </nav>
+
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-20">
+        <div class="glass px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 floating text-blue-400">
+            ✨ Tagline: "Tumbuh Bersama, Berkarya dengan Ceria"
+        </div>
+        <h1 class="text-5xl md:text-8xl font-extrabold mb-6 tracking-tight">
+            Where <span class="text-gradient">Creativity</span><br>Meets Joy.
+        </h1>
+        <p class="max-w-2xl text-lg opacity-60 mb-10 italic">
+            "Mengubah kerumitan menjadi kesenangan, mengubah visi menjadi ledakan visual."
+        </p>
+        <div class="flex gap-4">
+            <button class="bg-blue-600 px-8 py-4 rounded-2xl font-bold hover:scale-105 transition-transform shadow-[0_0_20px_rgba(37,99,235,0.4)]">
+                View Projects
+            </button>
+            <a href="#about" class="glass px-8 py-4 rounded-2xl font-bold hover:bg-white/10 transition flex items-center">
+                Our Story
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="max-w-6xl mx-auto px-4 py-24 border-t border-white/5">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="glass p-10 rounded-[40px]">
+                <h2 class="text-3xl font-bold mb-6 text-blue-400">Visi Kami</h2>
+                <p class="text-xl leading-relaxed opacity-80 font-light">
+                    Menjadi kawah candradimuka bagi ide-ide kreatif yang paling liar, memberikan kebahagiaan melalui desain yang berani, dan memimpin revolusi visual dengan sentuhan personal yang ceria.
+                </p>
+            </div>
+            <div class="space-y-6">
+                <h2 class="text-3xl font-bold mb-4">Misi Berlima</h2>
+                <ul class="space-y-4">
+                    <li class="flex gap-4 items-start">
+                        <span class="bg-blue-500/20 text-blue-400 p-2 rounded-lg text-xs font-bold">01</span>
+                        <p class="opacity-70">Menghadirkan solusi kreatif yang out-of-the-box tanpa menghilangkan unsur fun.</p>
+                    </li>
+                    <li class="flex gap-4 items-start">
+                        <span class="bg-purple-500/20 text-purple-400 p-2 rounded-lg text-xs font-bold">02</span>
+                        <p class="opacity-70">Membangun ekosistem kolaborasi yang transparan dan interaktif dengan klien.</p>
+                    </li>
+                    <li class="flex gap-4 items-start">
+                        <span class="bg-pink-500/20 text-pink-400 p-2 rounded-lg text-xs font-bold">03</span>
+                        <p class="opacity-70">Terus bereksperimen dengan teknologi desain terbaru untuk hasil maksimal.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="max-w-6xl mx-auto px-4 py-24">
+        <div class="text-center mb-16 space-y-4">
+        <div class="inline-block px-6 py-2 rounded-full bg-white/5 border border-white/10 mb-4">
+            <span class="text-sm md:text-base font-bold tracking-tight text-gradient uppercase">
+                "Menghidupkan Cerita, Menumbuhkan Dunia"
+    </section>
+
+    <section id="team" class="max-w-6xl mx-auto px-4 py-24">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4">Sang Kolektif Kreatif</h2>
+            <p class="opacity-50">Berlima dalam satu frekuensi ceria.</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+            <div class="member-card group">
+                <div class="glass p-4 rounded-[32px] text-center overflow-hidden">
+                    <div class="aspect-square rounded-2xl overflow-hidden mb-4 border border-white/10">
+                        <img src="gambar/ziza.jpeg" alt="Ziza" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-bold text-lg">Ziza</h3>
+                    <p class="text-xs opacity-50 uppercase tracking-widest mt-1 text-blue-400">Community Lead</p>
+                </div>
+            </div>
+
+            <div class="member-card group">
+                <div class="glass p-4 rounded-[32px] text-center overflow-hidden">
+                    <div class="aspect-square rounded-2xl overflow-hidden mb-4 border border-white/10">
+                        <img src="gambar/roohan.jpeg" alt="Roohan" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-bold text-lg">Roohan</h3>
+                    <p class="text-xs opacity-50 uppercase tracking-widest mt-1 text-purple-400">Creative Web Design</p>
+                </div>
+            </div>
+
+            <div class="member-card group">
+                <div class="glass p-4 rounded-[32px] text-center overflow-hidden">
+                    <div class="aspect-square rounded-2xl overflow-hidden mb-4 border border-white/10">
+                        <img src="gambar/fanani.jpeg" alt="Fanani" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-bold text-lg">Fanani</h3>
+                    <p class="text-xs opacity-50 uppercase tracking-widest mt-1 text-green-400">Product Developer</p>
+                </div>
+            </div>
+
+            <div class="member-card group">
+                <div class="glass p-4 rounded-[32px] text-center overflow-hidden">
+                    <div class="aspect-square rounded-2xl overflow-hidden mb-4 border border-white/10">
+                        <img src="gambar/ferly.jpeg" alt="Ferly" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-bold text-lg">Ferly</h3>
+                    <p class="text-xs opacity-50 uppercase tracking-widest mt-1 text-pink-400">Community Content Creator</p>
+                </div>
+            </div>
+
+            <div class="member-card group">
+                <div class="glass p-4 rounded-[32px] text-center overflow-hidden">
+                    <div class="aspect-square rounded-2xl overflow-hidden mb-4 border border-white/10">
+                        <img src="gambar/alfu.jpeg" alt="Alfu" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-bold text-lg">Alfu</h3>
+                    <p class="text-xs opacity-50 uppercase tracking-widest mt-1 text-orange-400">Visual Graphics Design</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="max-w-6xl mx-auto px-4 py-24">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+            <div>
+                <h2 class="text-4xl font-bold mb-2 text-gradient">Our Superpowers</h2>
+                <p class="opacity-50">Layanan yang kami berikan dengan penuh keceriaan.</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass glass-hover p-8 rounded-[32px] relative overflow-hidden group">
+                <div class="text-4xl mb-6">🎨</div>
+                <h3 class="text-2xl font-bold mb-4">Visual Identity</h3>
+                <p class="opacity-60 text-sm leading-relaxed">Membangun identitas brand yang kuat, ikonik, dan punya karakter unik.</p>
+                <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-blue-500/20 rounded-full blur-2xl group-hover:bg-blue-500/40 transition"></div>
+            </div>
+            <div class="glass glass-hover p-8 rounded-[32px] relative overflow-hidden group">
+                <div class="text-4xl mb-6">🚀</div>
+                <h3 class="text-2xl font-bold mb-4">Digital Experience</h3>
+                <p class="opacity-60 text-sm leading-relaxed">UI/UX desain yang tidak hanya cantik, tapi juga fungsional dan interaktif.</p>
+                <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-purple-500/20 rounded-full blur-2xl group-hover:bg-purple-500/40 transition"></div>
+            </div>
+            <div class="glass glass-hover p-8 rounded-[32px] relative overflow-hidden group">
+                <div class="text-4xl mb-6">🪄</div>
+                <h3 class="text-2xl font-bold mb-4">Motion Magic</h3>
+                <p class="opacity-60 text-sm leading-relaxed">Menghidupkan cerita brand Anda melalui animasi yang memanjakan mata.</p>
+                <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-pink-500/20 rounded-full blur-2xl group-hover:bg-pink-500/40 transition"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 text-center border-t border-white/10 mx-4">
+        <h2 class="text-3xl font-bold mb-6 italic">Ready to make some noise?</h2>
+        <a href="mailto:hello@berlimaceria.com" class="text-4xl md:text-7xl font-extrabold hover:text-blue-400 transition-colors break-words">
+            hello@berlima.ceria
+        </a>
+        <div class="mt-12 opacity-40 text-sm">
+            &copy; 2026 Berlima Ceria Studio. Made with ✨ and Creative Joy.
+        </div>
+
+<section id="origin" class="max-w-6xl mx-auto px-4 py-24 relative">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-green-500/20 blur-[120px] -z-10"></div>
+        
+        <div class="glass p-8 md:p-16 rounded-[48px] overflow-hidden relative">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-bold uppercase tracking-widest">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                        </span>
+                        Our Origin: Polerejo
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">
+                        Cultivated in <br>
+                        <span class="text-green-400">"The Green Village"</span> 
+                    </h2>
+                    <p class="opacity-70 leading-relaxed text-lg">
+                        Berakar di <span class="text-white font-semibold">Desa Polerejo, Kec. Purwosari, Kab. Pasuruan</span>. Sebuah destinasi yang menawarkan kesejukan alam autentik dengan hamparan kebun hijau yang luas. Di dusun <span class="underline decoration-green-500/50 text-white">Jln. Dewantoro</span>, hampir seluruh warga mendedikasikan hidupnya untuk merawat bumi melalui pertanian dan perkebunan yang aktif hingga kini.
+                    </p>
+                    
+                    <div class="space-y-4 opacity-80 text-sm">
+                        <p>Mengapa kami bangga berasal dari sini?</p>
+                        <ul class="grid grid-cols-1 gap-3">
+                            <li class="flex items-center gap-3">
+                                <span class="text-green-400">✔</span> Panorama asri dengan pekarangan rumah yang tertata rapi.
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-green-400">✔</span> Budaya ramah masyarakat lokal dalam berinteraksi.
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-green-400">✔</span> Potensi agrowisata edukatif berbasis pengalaman alam.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+<div class="md:w-1/2 grid grid-cols-2 gap-6 ml-auto"> <div class="space-y-6 col-start-2"> 
+        <a href="#Panorama" class="block">
+            <div class="glass glass-hover p-6 rounded-[32px] text-center">
+                <div class="text-3xl mb-2">🌳</div>
+                <div class="text-xl font-bold">Panorama</div>
+                <div class="text-[10px] opacity-50 uppercase">Hijau & Autentik</div>
+            </div>
+        </a>
+
+        <a href="#Hasil Bumi" class="block">
+            <div class="glass glass-hover p-6 rounded-[32px] text-center">
+                <div class="text-3xl mb-2">🍎</div>
+                <div class="text-xl font-bold">Hasil Bumi</div>
+                <div class="text-[10px] opacity-50 uppercase">Melimpah & Segar</div>
+            </div>
+        </a>
+
+        <a href="#Edukatif" class="block">
+            <div class="glass glass-hover p-6 rounded-[32px] text-center border-green-500/30">
+                <div class="text-3xl mb-2">📚</div>
+                <div class="text-xl font-bold">Edukatif</div>
+                <div class="text-[10px] opacity-50 uppercase">Wisata Perkebunan KRPL</div>
+            </div>
+        </a>
+
+        <a href="#Identity Village" class="block">
+            <div class="glass glass-hover p-6 rounded-[32px] text-center">
+                <div class="text-3xl mb-2">💎</div>
+                <div class="text-xl font-bold">Identitas</div>
+                <div class="text-[10px] opacity-50 uppercase">Kebanggaan Desa</div>
+            </div>
+        </a>
+    </div>
+    
+            <div class="col-span-2 mt-16 pt-8 border-t border-white/5">
+      	       <p class="italic text-center opacity-60 text-sm md:text-base w-full">
+                "Meskipun belum memiliki UMKM atau industri formal, kekuatan utama Polerejo terletak pada semangat bertani yang menjadi sumber ekonomi 			 sekaligus identitas yang kami bawa ke dalam setiap karya kreatif kami."
+              </p>
+  	  </div>
+    </div> 
+    </section>
+
+<section id="Panorama" class="max-w-6xl mx-auto px-4 py-24 border-t border-white/5">
+    <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
+            Menyelami <span class="text-gradient-green italic">Keasrian</span> Polorejo
+        </h2>
+        <p class="max-w-3xl mx-auto opacity-70 text-lg leading-relaxed">
+            Desa Polorejo bukan sekadar tempat, melainkan sebuah simfoni hijau. Di sini, udara segar dan ketenangan pedesaan berpadu dengan hamparan kebun yang menjadi nafas kehidupan warga.
+        </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+        
+        <div class="md:col-span-7 grid grid-cols-2 gap-4 order-2 md:order-1">
+            <div class="group relative overflow-hidden rounded-[32px] aspect-[4/3] glass border-white/10">
+                <img src="../Halo/gambar2/foto(3).jpeg" alt="Kebun Hijau Polorejo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-6 flex flex-col justify-end">
+                    <span class="text-xs font-bold text-green-400 uppercase tracking-widest">Landscape</span>
+                    <p class="text-sm font-medium">Hamparan Kebun Hijau</p>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-[32px] aspect-square glass border-white/10">
+                <img src="../mangga.jpg" alt="Hasil Bumi" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-6 flex flex-col justify-end">
+                    <span class="text-xs font-bold text-orange-400 uppercase tracking-widest">Harvest</span>
+                    <p class="text-sm font-medium">Buah Segar Musiman</p>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-[32px] aspect-square glass border-white/10 -mt-8 md:-mt-12">
+                <img src="../Halo/gambar2/foto(4).jpeg" alt="Aktivitas Tanam" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-6 flex flex-col justify-end">
+                    <span class="text-xs font-bold text-blue-400 uppercase tracking-widest">Education</span>
+                    <p class="text-sm font-medium">Budidaya Tanaman</p>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-[32px] aspect-[4/3] glass border-white/10">
+                <img src="../Halo/gambar2/foto(16).jpeg" alt="Keasrian Desa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-6 flex flex-col justify-end">
+                    <span class="text-xs font-bold text-pink-400 uppercase tracking-widest">Atmosphere</span>
+                    <p class="text-sm font-medium">Permukiman yang Sejuk</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:col-span-5 space-y-6 order-1 md:order-2">
+            <div class="glass p-8 rounded-[40px] border-r-4 border-green-500 h-full flex flex-col justify-center">
+                <h3 class="text-2xl font-bold mb-4 text-green-400">The Authentic Atmosphere</h3>
+                <ul class="space-y-4 text-sm opacity-80 leading-relaxed">
+                    <li class="flex gap-3">
+                        <span class="text-green-500">🌿</span>
+                        <p><strong>Kesejukan Murni:</strong> Menawarkan udara segar dan ketenangan pedesaan yang autentik di Kecamatan Purwosari.</p>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-green-500">📸</span>
+                        <p><strong>Sudut Fotogenik:</strong> Pekarangan rumah yang tertata rapi di hampir setiap rumah warga menciptakan pemandangan asri.</p>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-green-500">🤝</span>
+                        <p><strong>Interaksi Hangat:</strong> Kesempatan berinteraksi langsung dengan masyarakat lokal yang terkenal sangat ramah.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="mt-12 glass p-8 rounded-[32px] text-center border-dashed border-white/20">
+        <p class="text-lg opacity-80 leading-relaxed italic">
+            "Meskipun belum memiliki UMKM atau Industri yang menetap, kekuatan sejati Polorejo adalah identitas agrarisnya yang tetap aktif hingga kini, menjadikannya kebanggaan bersama yang tiada tara."
+        </p>
+    </div>
+</section>
+
+<section id="Hasil Bumi" class="max-w-6xl mx-auto px-4 py-24 border-t border-white/5 relative">
+    <div class="absolute top-0 left-0 w-64 h-64 bg-orange-500/10 blur-[100px] -z-10"></div>
+    
+    <div class="flex flex-col md:flex-row-reverse gap-16 items-start">
+        
+        <div class="md:w-1/2 grid grid-cols-2 gap-4 sticky top-24">
+            <div class="space-y-4">
+                <div class="group relative overflow-hidden rounded-[32px] aspect-[3/4] glass">
+                    <img src="../Halo/gambar2/foto(30).jpeg" alt="Sayuran Segar" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-orange-900/80 to-transparent p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity">
+                        <p class="font-bold">Kembang Kol yang sehat</p>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-[32px] aspect-square glass">
+                    <img src="../Halo/gambar2/foto(31).jpeg" alt="Mangga" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-orange-900/80 to-transparent p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity">
+                        <p class="font-bold">Terong kuning</p>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-4 pt-12">
+                <div class="group relative overflow-hidden rounded-[32px] aspect-square glass">
+                    <img src="../Halo/gambar2/foto(12).jpeg" alt="Pertanian" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-orange-900/80 to-transparent p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity">
+                        <p class="font-bold">Jeruk Lemon yang Segar</p>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-[32px] aspect-[3/4] glass">
+                    <img src="../Halo/gambar2/foto(23).jpeg" alt="Irigasi" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-orange-900/80 to-transparent p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity">
+                        <p class="font-bold">Cabai Merah Merona</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:w-1/2 space-y-8">
+            <div>
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-bold uppercase tracking-widest mb-6">
+                    🍎 Komoditas Unggulan
+                </div>
+                <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">
+                    Hasil Bumi <br> <span class="text-orange-400">Melimpah & Subur</span>
+                </h2>
+            </div>
+
+            <div class="space-y-6 opacity-80 leading-relaxed">
+                <p>
+                    Terletak di zona peralihan dengan tanah vulkanik yang subur, Desa Polorejo menjadi lumbung <strong>Sayur dan Buah</strong> yang menjanjikan. Didukung aliran air pegunungan Arjuno-Welirang, irigasi di sini terjaga sepanjang tahun.
+                </p>
+                
+                <div class="grid grid-cols-1 gap-4">
+                    <div class="glass p-6 rounded-3xl border-l-4 border-orange-500">
+                        <h4 class="font-bold text-orange-400 mb-2">🥬 Sayuran Segar</h4>
+                        <p class="text-sm">Cabai, tomat, buncis, kangkung, bayam, dan ketimun yang dipanen secara musiman oleh warga.</p>
+                    </div>
+                    
+                    <div class="glass p-6 rounded-3xl border-l-4 border-yellow-500">
+                        <h4 class="font-bold text-yellow-400 mb-2">🥭 Buah Tropis</h4>
+                        <p class="text-sm">Mangga (dominan), rambutan, durian, pisang, nangka, dan pepaya dengan kualitas unggulan pasar Surabaya & Malang.</p>
+                    </div>
+
+                    <div class="glass p-6 rounded-3xl border-l-4 border-green-500">
+                        <h4 class="font-bold text-green-400 mb-2">🌿 Sumber Daya Alam</h4>
+                        <p class="text-sm">Tanaman perkebunan seperti kelapa dan tebu, serta potensi pengembangan ternak kecil yang terintegrasi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="Edukatif" class="max-w-6xl mx-auto px-4 py-24 border-t border-white/5 relative">
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 blur-[100px] -z-10"></div>
+    
+<section id="education-details" class="max-w-6xl mx-auto px-4 py-24 border-t border-white/5 relative">
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 blur-[100px] -z-10"></div>
+    
+    <div class="flex flex-col md:flex-row-reverse gap-16 items-start">
+        <div class="md:w-1/2 space-y-8">
+            <div>
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">
+                    🏢 Kampung Percontohan RW 7
+                </div>
+                <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">
+                    KRPL: Edukasi Hijau <br> <span class="text-blue-400">Berbasis Pekarangan</span>
+                </h2>
+            </div>
+
+            <div class="space-y-6 opacity-80 leading-relaxed">
+                <p>
+                    Program <strong>Kawasan Rumah Pangan Lestari (KRPL)</strong> di RW 7 Desa Polorejo adalah laboratorium hidup di mana pekarangan rumah disulap menjadi sumber pangan mandiri sekaligus sarana pembelajaran teknik bercocok tanam yang ramah lingkungan.
+                </p>
+                
+                <div class="space-y-4">
+                    <div class="glass p-6 rounded-3xl group hover:border-blue-500/50 transition-all">
+                        <div class="flex gap-4 items-start">
+                            <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-xl text-xs font-bold">🌱</span>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Pemanfaatan Pekarangan Kolektif</h4>
+                                <p class="text-sm">Menanam sayuran, buah, dan Tanaman Obat Keluarga (TOGA) secara terpadu di setiap rumah warga untuk mendukung ketahanan pangan mandiri.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass p-6 rounded-3xl group hover:border-blue-500/50 transition-all">
+                        <div class="flex gap-4 items-start">
+                            <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-xl text-xs font-bold">👥</span>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Edukasi & Partisipasi Warga</h4>
+                                <p class="text-sm">Melibatkan PKK dan pelajar dalam mempelajari pengelolaan media tanam serta teknik budidaya yang berkelanjutan.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass p-6 rounded-3xl group hover:border-blue-500/50 transition-all border-dashed border-blue-500/30">
+                        <div class="flex gap-4 items-start">
+                            <span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-xl text-xs font-bold">🏆</span>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Pusat Studi Tiru</h4>
+                                <p class="text-sm">Diakui sebagai kampung percontohan tingkat kecamatan dan kerap menjadi lokasi studi banding berkat inovasi lingkungan yang mandiri.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pl-4 border-l-2 border-blue-500/50 italic text-sm opacity-70 py-2">
+                    "KRPL di RW 7 bukan hanya tentang menanam tanaman, tetapi juga menanam pengetahuan dan kesadaran agar masyarakat semakin mandiri." 
+                    <br><span class="font-bold text-blue-400">— Mas Alfin, Pengurus KRPL</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:w-1/2 grid grid-cols-2 gap-4 sticky top-24">
+            <div class="space-y-4 pt-12">
+                <div class="group relative overflow-hidden rounded-[32px] aspect-square glass">
+                    <img src="../Halo/gambar2/foto(6).jpeg" alt="Kebun Sayur" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-blue-900/40 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex items-end">
+                        <p class="text-[10px] font-bold uppercase tracking-widest">Survei Lokasi KRPL</p>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-[32px] aspect-[3/4] glass">
+                    <img src="../Halo/gambar2/foto(19).jpeg" alt="TOGA" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-blue-900/40 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex items-end">
+                        <p class="text-[10px] font-bold uppercase tracking-widest">Koleksi Sayuran</p>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <div class="group relative overflow-hidden rounded-[32px] aspect-[3/4] glass">
+                    <img src="../Halo/gambar2/foto(32).jpeg" alt="Warna KRPL" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-blue-900/40 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex items-end">
+                        <p class="text-[10px] font-bold uppercase tracking-widest">Dokumentasi Aktivitas Warga</p>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-[32px] aspect-square glass">
+                    <img src="../Halo/gambar2/foto(35).jpeg" alt="Kebun Rapi" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-blue-900/40 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex items-end">
+                        <p class="text-[10px] font-bold uppercase tracking-widest">Dokumentasi Proyek dengan Salah Satu Pengurus Kegiatan KRPL</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="Identity Village" class="max-w-6xl mx-auto px-4 py-24 border-t border-white/5 relative">
+    <div class="absolute top-1/2 right-1/2 w-80 h-80 bg-pink-500/10 blur-[120px] -z-10"></div>    
+    <div class="flex flex-col md:flex-row gap-16 items-start">
+        <div class="md:w-1/2 space-y-8">
+            <div>
+                <div class="inline-flex items-start gap-2 px-4 py-2 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-xs font-bold uppercase tracking-widest mb-6">
+                    💎 The Village Identity
+                </div>
+                <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">
+                    The Green Village: <br> <span class="text-pink-400">Kebanggaan Murni</span>
+                </h2>
+            </div>
+
+            <div class="space-y-6 opacity-80 leading-relaxed text-lg">
+                <p>
+                    Julukan <strong>"The Green Village"</strong> bukan sekadar nama, melainkan cerminan identitas masyarakat Polorejo dalam menjaga keseimbangan antara produktivitas pertanian dan kelestarian lingkungan.
+                </p>
+                
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="flex gap-4">
+                        <div class="text-2xl">🏔️</div>
+                        <div>
+                            <h4 class="font-bold text-white">Harmoni Alam & Manusia</h4>
+                            <p class="text-sm">Terletak di zona peralihan (100–300 mdpl), menciptakan lanskap sawah hijau dan kebun rindang yang tak terputus sepanjang tahun.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4">
+                        <div class="text-2xl">✨</div>
+                        <div>
+                            <h4 class="font-bold text-white">Keaslian yang Terjaga</h4>
+                            <p class="text-sm">Berbeda dengan desa wisata komersial lainnya, Polorejo tetap mempertahankan kemurnian agraris sebagai daya tarik utamanya.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="text-2xl">❤️</div>
+                        <div>
+                            <h4 class="font-bold text-white">Warisan Inspiratif</h4>
+                            <p class="text-sm">Menjadi simbol kebanggaan warga Purwosari yang menginspirasi generasi muda untuk mencintai tanah kelahiran dan pertanian modern.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:w-1/2 relative">
+            <div class="absolute -top-4 -left-4 w-full h-full border border-pink-500/20 rounded-[48px] -z-10"></div>
+            
+            <div class="grid grid-cols-2 gap-4">
+                <div class="space-y-4">
+                    <div class="group relative overflow-hidden rounded-[32px] glass">
+                        <img src="../photo1.png" alt="Sawah Hijau" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-pink-900/40 opacity-0 group-hover:opacity-100 transition-opacity p-4 flex items-center justify-center">
+                            <span class="text-[10px] font-bold tracking-widest uppercase">Authentic</span>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-[32px] aspect-square glass">
+                        <img src="./photo2.png" alt="Warga Polorejo" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-pink-900/40 opacity-0 group-hover:opacity-100 transition-opacity p-4 flex items-center justify-center">
+                            <span class="text-[10px] font-bold tracking-widest uppercase">Community</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-12">
+                    <div class="group relative overflow-hidden rounded-[48px] h-full glass border-2 border-pink-500/20">
+                        <img src="../Halo/gambar2/foto(6).jpeg" alt="The Green Village" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-pink-900/80 to-transparent p-8 flex flex-col justify-end">
+                            <h5 class="text-xl font-bold">The Green Village</h5>
+                            <p class="text-xs opacity-70">Pride of Purwosari</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="conclusion" class="max-w-6xl mx-auto px-4 py-32">
+        <div class="glass p-12 md:p-24 rounded-[60px] relative overflow-hidden text-center border-white/20">
+            <div class="absolute -top-24 -left-24 w-64 h-64 bg-green-500/20 blur-[80px]"></div>
+            <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-blue-500/20 blur-[80px]"></div>
+
+            <div class="relative z-10 max-w-4xl mx-auto">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-white/60 text-[10px] font-bold uppercase tracking-[0.3em] mb-10">
+                    🌿 The Final Chapter
+                </div>
+                
+                <h2 class="text-4xl md:text-6xl font-extrabold mb-10 tracking-tight leading-tight">
+                    Harmoni yang <span class="text-gradient">Menetap.</span>
+                </h2>
+                
+                <div class="space-y-8 text-lg md:text-xl font-light leading-relaxed opacity-70">
+                    <p>
+                        Desa Polorejo bukan sekadar titik di peta Kabupaten Pasuruan, melainkan sebuah pernyataan tentang bagaimana kehidupan seharusnya berjalan. Di sini, <span class="text-white font-semibold italic">"The Green Village"</span> bukan hanya julukan, tapi nafas harian warganya yang merawat tanah vulkanik lereng Arjuno-Welirang dengan sepenuh hati.
+                    </p>
+                    <p>
+                        Dari pekarangan RW 7 yang mandiri hingga hamparan kebun mangga yang melimpah, Polorejo membuktikan bahwa kemurnian agraris adalah kemewahan sejati di era modern. Tempat di mana setiap jengkal tanah bercerita tentang keberlanjutan.
+                    </p>
+                </div>
+
+                <div class="mt-20 space-y-10">
+                    <h3 class="text-2xl md:text-3xl font-bold tracking-tight">
+                        Ayo, Temukan Kedamaian Anda di Polorejo!
+                    </h3>
+                    <p class="max-w-2xl mx-auto opacity-50 font-light italic text-base">
+                        Lupakan sejenak rutinitas kota dan kembalilah ke akar. Baik Anda ingin belajar ekosistem pangan atau sekadar mencari ketenangan—Polorejo selalu punya ruang untuk Anda.
+                    </p>
+                    
+                    <div class="flex flex-col md:flex-row gap-6 justify-center items-center pt-6">
+                        <button class="bg-white text-black px-10 py-5 rounded-3xl font-bold hover:scale-105 transition-all shadow-xl">
+                            Plan Your Visit 🚜
+                        </button>
+                        <a href="#panorama-showcase" class="text-sm font-bold uppercase tracking-widest border-b border-white/20 pb-1 hover:border-white transition-all">
+                            Explore Polorejo Scenery
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-16 opacity-30 italic text-sm">
+            "Datanglah sebagai tamu, pulanglah sebagai bagian dari cerita hijau kami."
+        </div>
+    </section>
+
+    </footer>
+
+</body>
+</html>
